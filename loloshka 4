@@ -1,30 +1,35 @@
-// Ввод числа пользователем
-user_number = int(input("[ + ] Введите число: "))
+#include <iostream>
+using namespace std;
 
-// Начальное значение множителя программы
-program_multiplier = 1
+int main() {
+    int userNumber;
+ 
+    cout << "[ + ] Введите число: ";
+    cin >> userNumber;
 
-print("\n[ + ] Начинаем решать примеры!")
+    int programMultiplier = 1;
 
-// Цикл продолжается пока множитель программы не достигнет 9
-while program_multiplier <= 9:
-// Генерация примера
-print(f"\n[ + ] Решите пример: {user_number} x {program_multiplier}")
+    
+    while (programMultiplier <= 9) {
+        
+        cout << "[ + ] Решите пример: " << userNumber << " x " << programMultiplier << endl; 
 
-// Ввод ответа пользователем
-user_answer = int(input("[ + ] Ответ: "))
+        cout << "[ + ] Ответ: ";
+        int userAnswer;
+        cin >> userAnswer;
 
-// Проверка правильности ответа
-correct_answer = user_number * program_multiplier
+        int correctAnswer = userNumber * programMultiplier;
 
-if user_answer == correct_answer:
-print("[ + ] Пример решен правильно!")
-program_multiplier += 1
-// Увеличиваем множитель для следующего примера
-else:
-print("[ - ] Ошибка, пример решен неверно!")
-break  # Завершаем программу при ошибке
+        if (userAnswer == correctAnswer) {
+            cout << "[ + ] Пример решен правильно!" << endl;
+            programMultiplier++;
+        }
+        else {
+            cout << "[ - ] Ошибка, пример решен неверно!" << endl;
+            return 0; 
+        }
+    }
 
-// Если все примеры решены правильно
-if program_multiplier > 9:
-print("\n[ + ] Примеры решены, поздравляем!")
+    cout << "[ + ] Примеры решены, поздравляем!" << endl;
+
+    return 0;
